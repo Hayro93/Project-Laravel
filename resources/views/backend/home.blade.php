@@ -24,8 +24,8 @@
                         <p>Description</p>
                         <textarea type="text" name="text" style="width: 100%;height: 241px">{{ $item->text }}</textarea><br>
                         <input type="submit" class="w3-block input-sub" name="sub2" value="Submit">
-                        @endforeach
                     </form>
+                    @endforeach
                 </div>
             </div>
         </div>
