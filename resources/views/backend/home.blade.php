@@ -11,14 +11,16 @@
                         <p>Home Image</p>
                         @foreach($array1 as $item)
                         <img src="../images/{{ $item->image }}" class="w3-image">
-                            <form action="{{ route('admin/home') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ action('HomeController@index') }}" novalidate  files="true" method="POST">
+                                {{ csrf_field() }}
                             <input type="file" name="image" id="image" class="input-file" required><br>
                             <input type="submit" class=" w3-block input-sub" name="sub1" value="Submit">
                             </form>
                     </div>
                 </div>
                 <div class="w3-col m6">
-                    <form action="{{ action('HomeController@index') }}" method="POST">
+                    <form action="{{ action('HomeController@index') }}" novalidate method="POST">
+                        {{ csrf_field() }}
                         <p>Title</p>
                         <textarea type="text" name="title" style="width: 100%;" autofocus>{{ $item->title }}</textarea><br>
                         <p>Description</p>

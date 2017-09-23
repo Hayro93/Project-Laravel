@@ -25,47 +25,29 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $image = $request->input('image');
+        $imagename = $request->input('image');
+        $file = $request->file('image');
         $sub1 = $request->input('sub1');
         $title = $request->input('title');
         $text = $request->input('text');
         $sub2 = $request->input('sub2');
 
         if($request->has(['sub1','image'])){
-            $update = Home::find(1);
-            $update -> image = $image;
+            $destinationPath = app_path()."/Admin/";
+            $file = $request->file('image') -> move($destinationPath);
+            $update = Home::find(2);
+            $update -> image = $imagename;
             $update -> save();
         }
-        if($request->has('sub2')){
-            $update = Home::find(1);
+        if($request->has(['sub2'])) {
+            $update = Home::find(2);
             $update->title = $title;
-            $updata->text = $text;
+            $update->text = $text;
             $update->save();
         }
 
         $array1 = Home::all();
         return view('backend.home')->with(['array1'=>$array1]);
-    }
-    public function edithome(Request $request){
-        $image = $request->input('image');
-        $sub1 = $request->input('sub1');
-        $title = $request->input('title');
-        $text = $request->input('text');
-        $sub2 = $request->input('sub2');
-
-        if($request->has(['sub1','image'])){
-            $update = Home::find(1);
-            $update -> image = $image;
-            $update -> save();
-        }
-        if($request->has('sub2')){
-            $update = Home::find(1);
-            $update->title = $title;
-            $updata->text = $text;
-            $update->save();
-        }
-        return view('backend.home');
-
     }
 
 }
