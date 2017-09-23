@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="w3-col m6">
-                    <form method="POST" action="/admin/home" accept-charset="UTF-8">
+                    <form action="{{ action('HomeController@index') }}" method="POST">
                         <p>Title</p>
                         <textarea type="text" name="title" style="width: 100%;" autofocus>{{ $item->title }}</textarea><br>
                         <p>Description</p>
@@ -26,8 +26,8 @@
                         <input type="submit" class="w3-block input-sub" name="sub2" value="Submit">
                     </form>
 
-                    @endforeach
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
