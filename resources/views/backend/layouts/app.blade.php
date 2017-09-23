@@ -81,8 +81,8 @@
                                     </li>
                                 </ul>
                                 <ul id="menu">
-                                    <li><a href="{{ route('home') }}">Home</a></li>
-                                    <li><a href="{{ route('about') }}">About Us</a></li>
+                                    <li><a href="{{ route('admin/home') }}">Home</a></li>
+                                    <li><a href="{{ route('admin/about') }}">About Us</a></li>
                                     <li><a href="services.php">Services</a></li>
                                     <li><a href="contact.php">Contact Us</a></li>
                                     <li><a href="addmap.php">Add Map Marker</a></li>

@@ -19,5 +19,5 @@ Route::match(['get', 'post'],'contacts', ['as'=>'contacts','uses'=>'Core@contact
 
 Auth::routes();
 
-Route::match(['get', 'post'],'/home', 'HomeController@index')->name('home');
-Route::match(['get', 'post'],'/about', 'Admin\Core@about')->name('about');
+Route::match(['get', 'post'],'/admin/home', 'HomeController@index')->name('admin/home');
+Route::match(['get', 'post'],'/admin/about', 'Admin\Core@about')->name('admin/about');
