@@ -30,7 +30,7 @@ class AboutsTableSeeder extends Seeder
             ],
             [
                 'title'=>'And finally, because WE CARE about our partners!',
-                'description'=>'1233456'
+                'description'=>''
             ]
         ]);
     }
