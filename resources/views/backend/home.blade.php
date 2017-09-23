@@ -18,21 +18,14 @@
                     </div>
                 </div>
                 <div class="w3-col m6">
-                {{ Form::open(array('url'=>'/admin/home')) }}
-
-                <!-- text input field -->
-                    {{ Form::label('username','Username',array('id'=>'','class'=>'')) }}
-                    {{ Form::text('username','clivern',array('id'=>'','class'=>'')) }}
-
-                    {{ Form::close() }}
-                   {{-- <form method="POST" action="/admin/home" accept-charset="UTF-8">
+                    <form method="POST" action="/admin/home" accept-charset="UTF-8">
                         <p>Title</p>
                         <textarea type="text" name="title" style="width: 100%;" autofocus>{{ $item->title }}</textarea><br>
                         <p>Description</p>
                         <textarea type="text" name="text" style="width: 100%;height: 241px">{{ $item->text }}</textarea><br>
                         <input type="submit" class="w3-block input-sub" name="sub2" value="Submit">
+                    </form>
 
-                    </form>--}}
                     @endforeach
                 </div>
             </div>
