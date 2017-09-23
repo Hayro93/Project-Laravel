@@ -31,10 +31,10 @@ class HomeController extends Controller
         $title = $request->input('title');
         $text = $request->input('text');
         $sub2 = $request->input('sub2');
-        $array1 = Home::all();
+
         if($request->has(['sub1','image'])){
             $update = Home::find(1);
-            $update -> image =$image;
+            $update -> image = $image;
             $update -> save();
         }
         if($request->has('sub2')){
@@ -43,6 +43,7 @@ class HomeController extends Controller
             $updata->text = $text;
             $update->save();
         }
+        $array1 = Home::all();
         return view('backend.home')->with(['array1'=>$array1]);
     }
 
