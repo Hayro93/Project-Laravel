@@ -5,11 +5,16 @@
 
 @section('header')
   <!-- Header -->
+  <style>
+    .bgimg{
+      @foreach($array1 as $item)
+      background-image: url("images/{{ $item->image }}");
+      @endforeach
+    }
+  </style>
   <header class="w3-display-container w3-animate-opacity w3-wide bgimg" id="home">
    {{-- <img class="w3-image " src="images/welcom.png" alt="Welcome" style="width:100%;max-height:700px;">--}}
     <div class="w3-display-middle w3-margin-top w3-center">
-      <!--  <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min">
-      <b>T</b></span><span class="w3-hide-small w3-text-black">Call Center</span></h1>  -->
     </div>
   </header>
 @endsection

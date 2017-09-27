@@ -9,10 +9,10 @@ use App\Team;
 use App\About;
 use App\Promo;
 use App\Contact;
-use App\Social;
 use App\User;
 class Core extends Controller
 {
+
     public function index(){
         $array1 = Home::all();
         $array2 = Team::all();
@@ -35,7 +35,7 @@ class Core extends Controller
         $email = $request->input('email');
         $phone = $request->input('phone');
         $mssg = $request->input('message');
-        /*if($request->has('Nname')) && $request->has('Email')) && $request->has('Phone'))){
+        /*if($request->has('name')) && $request->has('email')) && $request->has('phone'))){
             $to      = 'info@teleyan.com';
             $subject = 'Teleyan Web Site';
             $message = 'Name: '.$name. "\r\n" .
@@ -51,9 +51,5 @@ class Core extends Controller
         return view('frontend.contacts')->with(['data'=>$data]);
     }
 
-    public function footer(){
-        $data = Social::all();
 
-        return view('frontend.layouts.templet');
-    }
 }

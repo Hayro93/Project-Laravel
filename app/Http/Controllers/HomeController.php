@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use Illuminate\Support\Facades\Input;
 use App\Home;
 class HomeController extends Controller
 {
@@ -25,19 +23,23 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $imagename = $request->input('image');
-        $file = $request->file('image');
-        $sub1 = $request->input('sub1');
+
         $title = $request->input('title');
         $text = $request->input('text');
-        $sub2 = $request->input('sub2');
 
-        if($request->has(['sub1','image'])){
-            $destinationPath = app_path()."/Admin/";
-            $file = $request->file('image') -> move($destinationPath);
+        if($request->has(['sub1'])){
+            $this->validate($request, [
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+            $path = "images";
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            $file->move($path,$name);
+
             $update = Home::find(2);
-            $update -> image = $imagename;
+            $update -> image = $name;
             $update -> save();
+
         }
         if($request->has(['sub2'])) {
             $update = Home::find(2);
