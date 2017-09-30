@@ -202,6 +202,8 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-margin-top{margin-top:16px!important}.w3-margin-bottom{margin-bottom:16px!important}
 .w3-margin-left{margin-left:16px!important}.w3-margin-right{margin-right:16px!important}
 .w3-section{margin-top:16px!important;margin-bottom:16px!important}
+
+.content-padding{padding:5px 150px}
 .w3-padding-tiny{padding:2px 4px!important}.w3-padding-small{padding:4px 8px!important}
 .w3-padding-medium,.w3-padding,.w3-form{padding:8px 16px!important}
 .w3-padding-large{padding:12px 24px!important}.w3-padding-xlarge{padding:16px 32px!important}
@@ -358,3 +360,14 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-border-dark-grey,.w3-hover-border-dark-grey:hover,.w3-border-dark-gray,.w3-hover-border-dark-gray:hover{border-color:#616161!important}
 .w3-border-pale-red,.w3-hover-border-pale-red:hover{border-color:#ffe7e7!important}.w3-border-pale-green,.w3-hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .w3-border-pale-yellow,.w3-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.w3-border-pale-blue,.w3-hover-border-pale-blue:hover{border-color:#e7ffff!important}
+
+.edit-form{
+    border: 1px solid #d3e0e9;
+    padding-bottom: 26px;
+    margin-bottom: 20px;
+}
+.edit-form li{
+    float: left;
+    list-style-type: none;
+    padding-right: 20px;
+}

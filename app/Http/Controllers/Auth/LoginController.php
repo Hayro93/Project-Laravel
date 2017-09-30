@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/home';
+    protected $redirectTo = '/admin/account';  //erb login enq linum
 
     /**
      * Create a new controller instance.

@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript">
         window.onload = function(){
             var  menu = document.getElementById('menu');
@@ -62,12 +63,20 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            <li>
+
+                                <a href="{{ route('admin/account') }}" style="text-transform: capitalize;">
+                                    <i class="fa fa-user-circle-o"></i> {{ Auth::user()->name }}
+                                </a>
+
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
