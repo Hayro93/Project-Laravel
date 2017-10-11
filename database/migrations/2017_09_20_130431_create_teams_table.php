@@ -19,6 +19,12 @@ class CreateTeamsTable extends Migration
             $table->string('position',150);
             $table->text('desc');
             $table->string('image',150);
+            $table->integer('user_id')
+                    ->unsigned()
+                    ->nullable();
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users');
             $table->timestamps();
         });
     }

@@ -10,4 +10,6 @@ class Home extends Model
     protected $primaryKey = 'id';
     public $incrementing = FALSE;
     public $timestamps = TRUE;
-}
+
+    }
+

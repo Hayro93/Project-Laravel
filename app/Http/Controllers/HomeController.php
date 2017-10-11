@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,7 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('backend.account');
+        $id = Auth::user()->id;
+
+        $user = User::find($id);
+        $date = $user->team()->get();
+        return view('backend.account')->with(['date'=>$date]);
+
     }
+
 
 }

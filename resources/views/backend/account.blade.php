@@ -9,7 +9,15 @@
 
                     </div>
                     <div class="w3-col m6">
-
+                        @foreach($date as $item)
+                            <p>{{ $item->title }}</p>
+                            <p>{{ $item->position }}</p>
+                            <p>{{ $item->desc }}</p>
+                            <p>{{ $item->image }}</p>
+                        @endforeach
+                        @php
+                            //dump($date);
+                        @endphp
 
                     </div>
                 </div>

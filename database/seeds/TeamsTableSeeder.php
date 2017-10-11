@@ -17,7 +17,7 @@ class TeamsTableSeeder extends Seeder
                 preg_match() expects parameter 2 to be string, array given
 
             ]);*/
-            Team::create([
+            DB::table('teams')->insert([
             [
                 'title'=>'John Doe',
                 'position'=>'EO & Founder',

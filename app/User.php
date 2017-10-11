@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function contry(){
-        return $this->hasOne('App\Contry');  //uni meky
+    public function team(){
+        return $this->hasOne('\App\Team');  //uni meky
     }
 }
